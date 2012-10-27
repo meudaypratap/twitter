@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
     <g:javascript library="jquery" plugin="jquery"/>
+    <g:javascript src="${resource(dir: 'js', file: 'ang.js')}"/>
     <g:layoutHead/>
     <r:layoutResources/>
 </head>
