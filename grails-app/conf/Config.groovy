@@ -95,4 +95,11 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+simian {
+    reportsDir = "target/simian-reports"
+    fileDir = "."
+    cludesFiles = [includes: "**/*.groovy **/*.java"
+            , excludes: "**/*Spec.groovy **/Config.groovy"]
+    methodParams = [threshold: 3]
+}
 

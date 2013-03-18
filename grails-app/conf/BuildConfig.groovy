@@ -5,7 +5,15 @@ grails.project.test.reports.dir = "target/test-reports"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
-
+codenarc {
+    ruleSetFiles = "file:grails-app/conf/CodeNarcRules.groovy" // Ruleset file path
+    reports = {
+        HtmlReport('html') {    // Report type is 'html'
+            outputFile = 'target/CodeNarcReport.html' //Output file name
+            title = 'My Test Code Narc Report' // Title of the file
+        }
+    }
+}
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits("global") {
@@ -34,15 +42,21 @@ grails.project.dependency.resolution = {
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-
+        test "org.spockframework:spock-grails-support:0.7-groovy-2.0"
         // runtime 'mysql:mysql-connector-java:5.1.20'
     }
 
     plugins {
+        test(":spock:0.7") {
+            exclude "spock-grails-support"
+        }
+        test ":code-coverage:1.2.5"
+        compile ":codenarc:0.18.1"
+        compile ":console:1.2"
+        compile ":gmetrics:0.3.1"
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.8.0"
         runtime ":resources:1.1.6"
-
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"

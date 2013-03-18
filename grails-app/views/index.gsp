@@ -15,8 +15,9 @@
             <p>Congratulations, you have successfully started ${appName} application.</p>
 
             <div class="form-horizontal">
-                <a class="btn btn-primary" href="http://grails.org/doc/latest/">Learn Grails &raquo;</a>
-                <a class="btn btn-primary" href="http://twitter.github.com/bootstrap/">Learn Bootstrap &raquo;</a>
+                <a class="btn btn-small btn-primary" href="http://grails.org/doc/latest/">Learn Grails &raquo;</a>
+                <a class="btn btn-small btn-primary" href="http://twitter.github.com/bootstrap/">Learn Bootstrap &raquo;</a>
+                <a class="btn btn-small btn-primary" href="http://bootswatch.com/">Bootswatch Themes &raquo;</a>
             </div>
 
         </div>
@@ -36,9 +37,9 @@
                         <ul class="unstyled">
                             <li>App version: <g:meta name="app.version"/></li>
                             <li>Grails version: <g:meta name="app.grails.version"/></li>
-                            <li>Groovy version: ${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</li>
+                            <li>Groovy version: ${GroovySystem.getVersion()}</li>
                             <li>JVM version: ${System.getProperty('java.version')}</li>
-                            <li>ReloadiCompany 2012ng active: ${grails.util.Environment.reloadingAgentEnabled}</li>
+                            <li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
                             <li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
                             <li>Domains: ${grailsApplication.domainClasses.size()}</li>
                             <li>Services: ${grailsApplication.serviceClasses.size()}</li>
