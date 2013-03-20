@@ -1,4 +1,4 @@
-package com.angular
+package com.mb
 
 class UtilController {
 
