@@ -11,7 +11,8 @@ class ApplicationFilters {
 
         consoleImports(controller: 'console', action: '*') {
             before = {
-                String importStatements = ""
+                String importStatements = "//amelia,cerulean,united,spacelab,spruce\n" +
+                        "//bootstrap.theme = cerulean"
 
                 session['_grails_console_last_code_'] = session['_grails_console_last_code_'] ?: importStatements
             }
