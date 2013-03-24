@@ -14,6 +14,10 @@ codenarc {
         }
     }
 }
+cloudbees.account='meudaypratap'
+cloudbees.api.key='3FCE1FA757F8BC2E'
+cloudbees.api.secret='IMONU9VGM71WTWDQFAVWN4I8BARCMVU5OT7J6G/PXH0='
+cloudbees.permgensize = 128
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits("global") {
@@ -54,6 +58,7 @@ grails.project.dependency.resolution = {
         compile ":codenarc:0.18.1"
         compile ":console:1.2"
         compile ":gmetrics:0.3.1"
+        compile ":cloud-bees:0.6.2"
         runtime ":hibernate:$grailsVersion"
         runtime ":jquery:1.8.0"
         runtime ":resources:1.1.6"
