@@ -21,3 +21,4 @@ cobertura.ser
 .classpath
 .project
 .idea
+*.iml

@@ -26,58 +26,17 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container-fluid">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
             <a class="brand" href="${createLink(uri: '/')}">${appName}</a>
-
-            <div class="nav-collapse collapse">
-                %{-- <p class="navbar-text pull-right">
-                    Logged in as <a href="#" class="navbar-link">${session.email}</a>
-                </p>--}%
-                <ul class="nav">
-                    <li class="active"><a href="${createLink(uri: '/')}">Home</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#controllers">
-                            Controllers
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="controllersMenu">
-                            <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
-                                <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></li>
-                            </g:each>
-                        </ul>
-                    </li>
-                </ul>
-
-                <form action="#" class="form-inline navbar-form pull-right">
-                    <div class="input-prepend">
-                        <span class="add-on">@</span><input name="email" class="span2 input-small" id="prependedInput" size="16" type="text" placeholder="Username">
-                    </div>
-                    <input name="password" type="password" class="input-small" placeholder="Password">
-                    <button type="submit" class="btn btn-inverse">Sign in</button>
-                </form>
-            </div>
+            <form class="navbar-search pull-right">
+                <input type="text" class="search-query" placeholder="Search">
+            </form>
         </div>
     </div>
 </div>
 
 <div class="container-fluid">
     <div class="row-fluid">
-        <div class="span2">
-            <div class="well sidebar-nav">
-                <ul class="nav nav-list">
-                    <li class="nav-header">Controllers</li>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
-                        <li><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></li>
-                    </g:each>
-                </ul>
-            </div>
-        </div>
-
-        <div class="span10">
+        <div class="span12">
             <g:if test="${flash.error}">
                 <div class="alert alert-error">
                     <button type="button" class="close" data-dismiss="alert">×</button>

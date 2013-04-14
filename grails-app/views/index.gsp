@@ -7,66 +7,61 @@
 
 <body>
 <g:set var="appName" value="${grails.util.GrailsNameUtils.getNaturalName(g.meta(name: 'app.name'))}" scope="page"/>
-<div class="row-fluid">
-    <div class="span9">
-        <div class="hero-unit">
-            <h1>Welcome to ${appName}</h1>
+<div class="span4">
+    <div class="well well-small">
+        <form class="form-signin">
+            <h4>Please sign in</h4>
+            <hr/>
+            <input type="email" class="input-block-level" placeholder="Email address" name="email" id="email"
+                   required="required">
+            <input type="password" class="input-block-level" placeholder="Password" name="password" id="password"
+                   required="required">
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me"> Remember me - <a href="#" class="muted">Forgot Password?</a>
+            </label>
+            <button class="btn btn-primary" type="submit">Sign in</button>
+        </form>
 
-            <p>Congratulations, you have successfully started ${appName} application.</p>
-
-            <div class="form-horizontal">
-                <a class="btn btn-small btn-primary" href="http://grails.org/doc/latest/">Learn Grails &raquo;</a>
-                <a class="btn btn-small btn-primary" href="http://twitter.github.com/bootstrap/">Learn Bootstrap &raquo;</a>
-                <a class="btn btn-small btn-primary" href="http://bootswatch.com/">Bootswatch Themes &raquo;</a>
-            </div>
-
-        </div>
     </div>
 
-    <div class="span3">
-        <div class="accordion" id="accordion2">
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle btn btn-info" data-toggle="collapse" data-parent="#accordion2" href="#application-status">
-                        Application Status
-                    </a>
-                </div>
+    <div class="well well-small">
+        <form class="form-signin">
+            <h4>New User? Sign up.</h4>
+            <hr/>
+            <input type="text" class="input-block-level" placeholder="Full name" name="fullname" id="fullname"
+                   required="required">
+            <input type="email" class="input-block-level" placeholder="Email address" name="email" id="email"
+                   required="required">
+            <input type="password" class="input-block-level" placeholder="Password" name="password" id="password"
+                   required="required">
+            <button class="btn btn-primary" type="submit">Sign up</button>
+        </form>
 
-                <div id="application-status" class="accordion-body collapse in">
-                    <div class="accordion-inner">
-                        <ul class="unstyled">
-                            <li>App version: <g:meta name="app.version"/></li>
-                            <li>Grails version: <g:meta name="app.grails.version"/></li>
-                            <li>Groovy version: ${GroovySystem.getVersion()}</li>
-                            <li>JVM version: ${System.getProperty('java.version')}</li>
-                            <li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-                            <li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-                            <li>Domains: ${grailsApplication.domainClasses.size()}</li>
-                            <li>Services: ${grailsApplication.serviceClasses.size()}</li>
-                            <li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-                        </ul>
+    </div>
+</div>
+
+<div class="span8">
+    <div class="well well-small">
+        <h4>Top Tweets</h4>
+        <hr/>
+        <ul class="unstyled">
+            <li>
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object img-rounded" src="${resource(dir: 'images', file: 'favicon.ico')}"/>
+                    </a>
+
+                    <div class="media-body">
+                        <strong>uday</strong> @uday <span class="pull-right">9m</span>
+
+                        <div class="media">
+                            Hiii guys how are you
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle btn btn-info" data-toggle="collapse" data-parent="#accordion2" href="#installed-plugins">
-                        Installed-Plugins
-                    </a>
-                </div>
-
-                <div id="installed-plugins" class="accordion-body collapse">
-                    <div class="accordion-inner">
-                        <ul class="unstyled">
-                            <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-                                <li>${plugin.name} - ${plugin.version}</li>
-                            </g:each>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <hr/>
+            </li>
+        </ul>
     </div>
 </div>
 
