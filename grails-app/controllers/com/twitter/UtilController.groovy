@@ -1,4 +1,4 @@
-package com.mb
+package com.twitter
 
 class UtilController {
 

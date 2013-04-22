@@ -11,8 +11,6 @@ target
 .classpath
 .idea/
 .project
-Angular.iml
-Angular-grailsPlugins.iml
 cobertura.ser
 **/*ipr
 **/*iws
