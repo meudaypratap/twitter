@@ -20,3 +20,8 @@ cobertura.ser
 .project
 .idea
 *.iml
+*.log
+/*DB.*
+/cobertura.ser
+.DS_Store
+/target/

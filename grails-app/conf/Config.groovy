@@ -1,4 +1,5 @@
-
+import org.apache.log4j.ConsoleAppender
+import org.apache.log4j.PatternLayout
 // locations to search for config files that get merged into the main config
 // config files can either be Java properties files or ConfigSlurper scripts
 
@@ -70,30 +71,26 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://microblog.meudaypratap.cloudbees.net"
+        grails.serverURL = "http://twitter.meudaypratap.cloudbees.net"
     }
 }
 
 // log4j configuration
 log4j = {
-    // Example of changing the log pattern for the default console
-    // appender:
-    //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
+    def logLayoutPattern = new PatternLayout("%d [%t] %-5p %c %x - %m%n")
 
-    error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
-           'org.codehaus.groovy.grails.web.pages', //  GSP
-           'org.codehaus.groovy.grails.web.sitemesh', //  layouts
-           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
-           'org.codehaus.groovy.grails.web.mapping', // URL mapping
-           'org.codehaus.groovy.grails.commons', // core / classloading
-           'org.codehaus.groovy.grails.plugins', // plugins
-           'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
-           'org.springframework',
-           'org.hibernate',
-           'net.sf.ehcache.hibernate'
+    appenders {
+        new ConsoleAppender(name: "console",
+                layout: logLayoutPattern)
+    }
+    root {
+        warn 'console'
+    }
+
+    warn 'org.codehaus.groovy.grails',
+            'org.springframework',
+            'org.hibernate',
+            'net.sf.ehcache.hibernate'
 }
 simian {
     reportsDir = "target/simian-reports"
@@ -102,4 +99,3 @@ simian {
             , excludes: "**/*Spec.groovy **/Config.groovy"]
     methodParams = [threshold: 3]
 }
-
